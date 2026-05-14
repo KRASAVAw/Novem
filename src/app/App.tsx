@@ -457,8 +457,8 @@ export default function App() {
           <div
             style={{
               maxWidth: "900px",
-              margin: isMobile ? "32px auto 0" : "180px auto 0",
-              padding: isMobile ? "24px 24px" : "24px 40px",
+              margin: isMobile ? "48px auto 0" : isTablet ? "140px auto 0" : "220px auto 0",
+              padding: isMobile ? "28px 24px" : isTablet ? "28px 40px" : "32px 40px",
               borderTop: isMobile ? "none" : "1px solid rgba(10,10,10,0.1)",
               textAlign: "center",
             }}
