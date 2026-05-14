@@ -321,20 +321,24 @@ export default function App() {
             display: "grid",
             gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
             maxWidth: "900px",
-            margin: isMobile ? "0 auto" : "175px auto 0",
-            padding: isMobile ? "0 24px" : "0 40px",
+            margin: isMobile ? "0 auto" : isTablet ? "100px auto 0" : "175px auto 0",
+            padding: isMobile ? "0 24px" : isTablet ? "0 32px" : "0 40px",
             gap: "0",
+            width: "100%",
+            boxSizing: "border-box",
           }}
         >
           {/* Pet Food */}
           <div
             style={{
-              paddingRight: isMobile ? "24px" : "60px",
-              paddingLeft: isMobile ? "24px" : "0",
-              paddingTop: isMobile ? "40px" : "0",
-              paddingBottom: isMobile ? "40px" : "0",
-              marginLeft: isMobile ? "-24px" : "0",
-              marginRight: isMobile ? "-24px" : "0",
+              minWidth: 0,
+              boxSizing: "border-box",
+              paddingRight: isMobile ? "24px" : isTablet ? "24px" : "60px",
+              paddingLeft: isMobile ? "24px" : isTablet ? "0" : "0",
+              paddingTop: isMobile ? "40px" : isTablet ? "0" : "0",
+              paddingBottom: isMobile ? "40px" : isTablet ? "0" : "0",
+              marginLeft: isMobile ? "-24px" : isTablet ? "0" : "0",
+              marginRight: isMobile ? "-24px" : isTablet ? "0" : "0",
               ...(isMobile && {
                 backgroundImage: `url(${petFoodMobileImg})`,
                 backgroundSize: "cover",
@@ -348,22 +352,24 @@ export default function App() {
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontWeight: 400,
-                  fontSize: isMobile ? "32px" : "38px",
+                  fontSize: isMobile ? "32px" : isTablet ? "34px" : "38px",
                   color: "#0a0a0a",
                   margin: "0 0 16px",
                   lineHeight: 1.1,
+                  overflowWrap: "break-word",
                 }}
               >
                 Pet Food
               </h2>
               <p
                 style={{
-                  fontSize: "14px",
+                  fontSize: isMobile ? "14px" : isTablet ? "13px" : "14px",
                   color: "rgba(10,10,10,0.6)",
                   lineHeight: 1.7,
                   marginBottom: "20px",
                   fontFamily: "'Satoshi', sans-serif",
                   fontWeight: 400,
+                  overflowWrap: "break-word",
                 }}
               >
                 Freeze-dried meals, toppers, and treats designed for quality, consistency, and performance.
@@ -393,13 +399,15 @@ export default function App() {
           {/* Agri-Food */}
           <div
             style={{
-              marginLeft: isMobile ? "-24px" : "-1px",
-              marginRight: isMobile ? "-24px" : "0",
-              paddingLeft: isMobile ? "24px" : "61px",
-              paddingRight: isMobile ? "24px" : "0",
-              paddingTop: isMobile ? "40px" : "0",
-              paddingBottom: isMobile ? "40px" : "0",
-              boxShadow: isMobile ? "none" : "-1px 0 0 0 rgba(10,10,10,0.12)",
+              minWidth: 0,
+              boxSizing: "border-box",
+              marginLeft: isMobile ? "-24px" : isTablet ? "0" : "-1px",
+              marginRight: isMobile ? "-24px" : isTablet ? "0" : "0",
+              paddingLeft: isMobile ? "24px" : isTablet ? "24px" : "61px",
+              paddingRight: isMobile ? "24px" : isTablet ? "0" : "0",
+              paddingTop: isMobile ? "40px" : isTablet ? "0" : "0",
+              paddingBottom: isMobile ? "40px" : isTablet ? "0" : "0",
+              boxShadow: isMobile ? "none" : isTablet ? "none" : "-1px 0 0 0 rgba(10,10,10,0.12)",
               ...(isMobile && {
                 backgroundImage: `url(${agriFoodMobileImg})`,
                 backgroundSize: "cover",
@@ -412,22 +420,24 @@ export default function App() {
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontWeight: 400,
-                  fontSize: isMobile ? "32px" : "38px",
+                  fontSize: isMobile ? "32px" : isTablet ? "34px" : "38px",
                   color: "#1C3020",
                   margin: "0 0 16px",
                   lineHeight: 1.1,
+                  overflowWrap: "break-word",
                 }}
               >
                 Agri-Food
               </h2>
               <p
                 style={{
-                  fontSize: "14px",
+                  fontSize: isMobile ? "14px" : isTablet ? "13px" : "14px",
                   color: "#4A6350",
                   lineHeight: 1.7,
                   marginBottom: "20px",
                   fontFamily: "'Satoshi', sans-serif",
                   fontWeight: 400,
+                  overflowWrap: "break-word",
                 }}
               >
                 Ingredient processing and preservation solutions for food and agricultural applications.
